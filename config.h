@@ -6,8 +6,10 @@
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 12;       /* snap pixel */
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
+static const int usealtbar          = 1;          /* 1 means use non-dwm status bar */
+static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
 static const char *fonts[]          = { "ZedMono NF:size=12" };
 static const char dmenufont[]       = "ZedMono NF:size=12";
 static const char col_gray1[]       = "#222222";
@@ -17,7 +19,7 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_black[]       = "#000000";
 static const char col_brown[]       = "#696355";
 static const char col_cyan[]        = "#005577";
-static const char col_dark_cyan[]     = "#224c5d";
+static const char col_dark_cyan[]   = "#224c5d";
 static const char *colors[][4]      = {
 	/*               fg         bg         border     float */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2, col_dark_cyan },
@@ -84,6 +86,7 @@ static const char* termcmd[]  = { "alacritty", NULL };
 #define MEDIA_PREV_CMD   "playerctl previous"
 #define MEDIA_TOGGLE_CMD "playerctl play-pause"
 #define CONFIG_MON       "$HOME/config-monitor.sh"
+#define TOGGLE_POLYBAR   "polybar-msg cmd toggle"
 
 
 static const Key keys[] = {
@@ -105,6 +108,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F4,                    spawn,          SHCMD(BRIUP_CMD) },
     { MODKEY,                       XK_F3,                    spawn,          SHCMD(BRIDOWN_CMD) },
     { MODKEY|ShiftMask,             XK_d,                     spawn,          SHCMD(CONFIG_MON) },
+    { MODKEY,                       XK_b,                     spawn,          SHCMD(TOGGLE_POLYBAR) },
 	{ MODKEY,                       XK_j,                     focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                     focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,                     incnmaster,     {.i = +1 } },
