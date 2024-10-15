@@ -8,12 +8,12 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 12;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const int usealtbar          = 1;          /* 1 means use non-dwm status bar */
+static const int usealtbar          = 0;          /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
 static const char *altbarcmd        = ""; /* Alternate bar launch command */
-static const char *fonts[]          = { "ZedMono NF:size=12" };
-static const char dmenufont[]       = "ZedMono NF:size=12";
+static const char *fonts[]          = { "Iosevka Custom:size=12" };
+static const char dmenufont[]       = "Iosevka Custom:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
