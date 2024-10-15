@@ -1,4 +1,5 @@
 dwm
-dwm.o
+slstatus/slstatus
 config.def.h
+*.o
 *.rej
