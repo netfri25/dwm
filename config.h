@@ -90,6 +90,7 @@ static const char* termcmd[]  = { "alacritty", NULL };
 #define CONFIG_MON       "$HOME/config-monitor.sh"
 #define TOGGLE_POLYBAR   "polybar-msg cmd toggle"
 
+#define LOCK_CMD "slock systemctl suspend"
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
@@ -110,6 +111,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F4,                    spawn,          SHCMD(BRIUP_CMD) },
     { MODKEY,                       XK_F3,                    spawn,          SHCMD(BRIDOWN_CMD) },
     { MODKEY|ShiftMask,             XK_d,                     spawn,          SHCMD(CONFIG_MON) },
+    { MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD(LOCK_CMD) },
     { MODKEY,                       XK_b,                     spawn,          SHCMD(TOGGLE_POLYBAR) },
 	{ MODKEY,                       XK_j,                     focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                     focusstack,     {.i = -1 } },
