@@ -1880,7 +1880,7 @@ void
 spawnbar()
 {
 	if (*altbarcmd)
-		system(altbarcmd);
+		(void)! system(altbarcmd);
 }
 
 void

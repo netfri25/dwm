@@ -11,7 +11,7 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 static const int usealtbar          = 0;          /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
-static const char *altbarcmd        = ""; /* Alternate bar launch command */
+static const char *altbarcmd        = "slstatus &"; /* Alternate bar launch command */
 static const char *fonts[]          = { "Iosevka Custom:size=12" };
 static const char dmenufont[]       = "Iosevka Custom:size=12";
 static const char col_gray1[]       = "#222222";
