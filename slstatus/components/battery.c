@@ -5,6 +5,9 @@
 #include "../slstatus.h"
 #include "../util.h"
 
+#define LOW_BAT_PERC  30
+#define LOW_BAT_COLOR "#ff1111"
+
 #if defined(__linux__)
 /*
  * https://www.kernel.org/doc/html/latest/power/power_supply_class.html
@@ -46,7 +49,12 @@
 		if (pscanf(path, "%d", &cap_perc) != 1)
 			return NULL;
 
-		return bprintf("%d", cap_perc);
+        if (cap_perc <= LOW_BAT_PERC) {
+            return bprintf("^c" LOW_BAT_COLOR "^%d^d^", cap_perc);
+        } else {
+            return bprintf("%d", cap_perc);
+        }
+
 	}
 
 	const char *
