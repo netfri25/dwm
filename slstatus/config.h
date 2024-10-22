@@ -70,11 +70,12 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function     format        argument */
     { run_command, "[%s^d^]  ", "if [ $(playerctl status 2> /dev/null) != \"Playing\" ]; then echo -n \"^c#666666^\"; fi; playerctl metadata --format '{{ artist }} - {{ title }}' 2> /dev/null" },
+    { cpu_perc,     YELLOW("CPU")   " %s  ", NULL },
     { disk_perc,    YELLOW("DISK")  " %s%%  ", "/" },
     { ram_used,     YELLOW("RAM")   " %s  ", NULL },
     { run_command,  YELLOW("VOL")   " %s  ", "pactl get-sink-volume @DEFAULT_SINK@ | head -1 | awk '{ print $5 }'" },
     { wifi_essid,   YELLOW("WIFI")  " %s  ", "wlo1" },
     { datetime,     YELLOW("TIME")  " %s  ", "%H:%M %d/%m" },
     { battery_state, YELLOW("BAT") " %s", "BAT0" },
-    { battery_perc, "%s%%", "BAT0" },
+    { battery_perc, "%s", "BAT0" },
 };
