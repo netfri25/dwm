@@ -76,6 +76,7 @@ static const struct arg args[] = {
     { run_command,  YELLOW("VOL")   " %s  ", "pactl get-sink-volume @DEFAULT_SINK@ | head -1 | awk '{ print $5 }'" },
     { wifi_essid,   YELLOW("WIFI")  " %s  ", "wlo1" },
     { datetime,     YELLOW("TIME")  " %s  ", "%H:%M %d/%m" },
+    { battery_remaining, YELLOW("LEFT") " %s  ", "BAT0" },
     { battery_state, YELLOW("BAT") " %s", "BAT0" },
     { battery_perc, "%s", "BAT0" },
 };
