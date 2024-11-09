@@ -4,7 +4,7 @@
 #include "arg.h"
 
 /* interval between updates (in ms) */
-const unsigned int interval = 500;
+const unsigned int interval = 5000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
