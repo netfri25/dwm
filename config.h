@@ -74,8 +74,8 @@ static const char* dmenucmd[] = { "rofi", "-show", "drun", "-theme", "gruvbox-da
 static const char* termcmd[]  = { "alacritty", NULL };
 
 #define SAVE_SCREENSHOT "tee $HOME/Pictures/Screenshots/$(date +'Screenshot-from-%Y-%m-%d-%H-%M-%S').png | xclip -selection clipboard -t image/png"
-#define SCREENSHOT_CMD           "maim -u | "    SAVE_SCREENSHOT
-#define SELECTION_SCREENSHOT_CMD "maim -u -s | " SAVE_SCREENSHOT
+#define SCREENSHOT_CMD           "maim -u | "       SAVE_SCREENSHOT
+#define SELECTION_SCREENSHOT_CMD "maim -u -s -D | " SAVE_SCREENSHOT
 
 #define BRIUP_CMD   "brightnessctl set 2%+ -n"
 #define BRIDOWN_CMD "brightnessctl set 2%- -n"
