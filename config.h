@@ -12,7 +12,7 @@ static const int usealtbar          = 0;          /* 1 means use non-dwm status 
 static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
 static const char *altbarcmd        = "slstatus &"; /* Alternate bar launch command */
-static const char *fonts[]          = { "Iosevka Custom:size=12" };
+static const char *fonts[]          = { "Iosevka Custom:size=11" };
 static const char dmenufont[]       = "Iosevka Custom:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
