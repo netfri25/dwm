@@ -80,17 +80,14 @@ static const char* termcmd[]  = { "alacritty", NULL };
 #define BRIUP_CMD   "brightnessctl set 2%+ -n"
 #define BRIDOWN_CMD "brightnessctl set 2%- -n"
 
-#define VOLUP_CMD   "amixer -D pulse sset Master 5%+"
-#define VOLDOWN_CMD "amixer -D pulse sset Master 5%-"
-#define VOLMUTE_CMD "amixer -D pulse sset Master toggle"
+#define VOLUP_CMD   "amixer sset Master 5%+"
+#define VOLDOWN_CMD "amixer sset Master 5%-"
+#define VOLMUTE_CMD "amixer sset Master toggle"
 
 #define MEDIA_NEXT_CMD   "playerctl next"
 #define MEDIA_PREV_CMD   "playerctl previous"
 #define MEDIA_TOGGLE_CMD "playerctl play-pause"
 #define CONFIG_MON       "$HOME/config-monitor.sh"
-#define TOGGLE_POLYBAR   "polybar-msg cmd toggle"
-
-#define LOCK_CMD "slock systemctl suspend"
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
