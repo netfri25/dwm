@@ -108,8 +108,6 @@ static const Key keys[] = {
     { MODKEY,                       XK_F4,                    spawn,          SHCMD(BRIUP_CMD) },
     { MODKEY,                       XK_F3,                    spawn,          SHCMD(BRIDOWN_CMD) },
     { MODKEY|ShiftMask,             XK_d,                     spawn,          SHCMD(CONFIG_MON) },
-    { MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD(LOCK_CMD) },
-    { MODKEY,                       XK_b,                     spawn,          SHCMD(TOGGLE_POLYBAR) },
 	{ MODKEY,                       XK_j,                     focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                     focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,                     incnmaster,     {.i = +1 } },
