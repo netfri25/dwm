@@ -8,6 +8,8 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 12;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
+#define ICONSIZE 16   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
 static const int usealtbar          = 0;          /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
