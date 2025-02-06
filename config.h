@@ -13,7 +13,6 @@ static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
 static const char *alttrayname      = "tray";    /* Polybar tray instance name */
 static const char *altbarcmd        = "slstatus &"; /* Alternate bar launch command */
 static const char *fonts[]          = { "Iosevka Custom:size=11" };
-static const char dmenufont[]       = "Iosevka Custom:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -67,7 +66,6 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-// static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char* dmenucmd[] = { "rofi", "-show", "drun", "-theme", "gruvbox-dark-hard", NULL };
 static const char* termcmd[]  = { "alacritty", NULL };
 
