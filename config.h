@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char* dmenucmd[] = { "rofi", "-show", "drun", "-theme", "gruvbox-dark-hard", NULL };
-static const char* termcmd[]  = { "kitty", NULL };
+static const char* termcmd[]  = { "alacritty", NULL };
 
 #define SAVE_SCREENSHOT "tee $HOME/Pictures/Screenshots/$(date +'Screenshot-from-%Y-%m-%d-%H-%M-%S').png | xclip -selection clipboard -t image/png"
 #define SCREENSHOT_CMD           "maim -u | "       SAVE_SCREENSHOT
