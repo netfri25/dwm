@@ -67,13 +67,19 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 #define YELLOW(x) "^c#888811^" x "^d^"
+#define PLAYING   "if [ \"$(playerctl status 2> /dev/null)\" != \"Playing\" ]; then echo -n \"^c#666666^\"; fi; playerctl metadata --format '{{ artist }} - {{ title }}' 2> /dev/null"
+#define VOLUME \
+  "muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}');" \
+  "volume=$(pactl get-sink-volume @DEFAULT_SINK@ | head -1 | awk '{print $5}');" \
+  "if [ \"$muted\" = \"yes\" ]; then echo \"---\"; else printf \"$volume%\"; fi"
+
 static const struct arg args[] = {
 	/* function     format        argument */
-    { run_command, "[%s^d^]  ", "if [ $(playerctl status 2> /dev/null) != \"Playing\" ]; then echo -n \"^c#666666^\"; fi; playerctl metadata --format '{{ artist }} - {{ title }}' 2> /dev/null" },
+    { run_command, "[%s^d^]  ", PLAYING },
     { cpu_perc,     YELLOW("CPU")   " %s  ", NULL },
     { disk_perc,    YELLOW("DISK")  " %s%%  ", "/" },
     { ram_used,     YELLOW("RAM")   " %s  ", NULL },
-    { run_command,  YELLOW("VOL")   " %s  ", "pactl get-sink-volume @DEFAULT_SINK@ | head -1 | awk '{ print $5 }'" },
+    { run_command,  YELLOW("VOL")   " %s  ", VOLUME },
     { wifi_essid,   YELLOW("WIFI")  " %s  ", "wlo1" },
     { datetime,     YELLOW("TIME")  " %s  ", "%H:%M %d/%m" },
     { battery_remaining, YELLOW("LEFT") " %s  ", "BAT0" },
