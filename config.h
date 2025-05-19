@@ -10,11 +10,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 #define ICONSIZE 16   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
-static const int usealtbar          = 0;          /* 1 means use non-dwm status bar */
-static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
-static const char *alttrayname      = "tray";    /* Polybar tray instance name */
-static const char *altbarcmd        = "slstatus &"; /* Alternate bar launch command */
 static const char *fonts[]          = { "Iosevka Custom:size=11" };
+static const char dmenufont[]       = "Iosevka Custom:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
