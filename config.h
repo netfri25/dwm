@@ -76,13 +76,16 @@ static const char* termcmd[]  = { "alacritty", NULL };
 #define BRIUP_CMD   "brightnessctl set 2%+ -n"
 #define BRIDOWN_CMD "brightnessctl set 2%- -n"
 
-#define VOLUP_CMD   "amixer sset Master 5%+"
-#define VOLDOWN_CMD "amixer sset Master 5%-"
-#define VOLMUTE_CMD "amixer sset Master toggle"
+#define VOL_UPDATE_CMD "; kill -RTMIN+1 $(pidof statux)"
+#define VOLUP_CMD   "amixer sset Master 5%+" VOL_UPDATE_CMD
+#define VOLDOWN_CMD "amixer sset Master 5%-" VOL_UPDATE_CMD
+#define VOLMUTE_CMD "amixer sset Master toggle" VOL_UPDATE_CMD
 
-#define MEDIA_NEXT_CMD   "playerctl next"
-#define MEDIA_PREV_CMD   "playerctl previous"
-#define MEDIA_TOGGLE_CMD "playerctl play-pause"
+#define MEDIA_UPDATE_CMD "; sleep 0.05; kill -RTMIN+2 $(pidof statux)"
+#define MEDIA_NEXT_CMD   "playerctl next" MEDIA_UPDATE_CMD
+#define MEDIA_PREV_CMD   "playerctl previous" MEDIA_UPDATE_CMD
+#define MEDIA_TOGGLE_CMD "playerctl play-pause" MEDIA_UPDATE_CMD
+
 #define CONFIG_MON       "$HOME/config-monitor.sh"
 
 static const Key keys[] = {
